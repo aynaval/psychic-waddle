@@ -50,7 +50,7 @@ def submit_order(order: Order):
     try:
         insert_order(order)
         return {
-            "message": f"{order.name}, your order of {order.product} (quantity: {order.quantity}) has been submitted successfully. Details will be sent to {order.email}"
+            "message": f"{order.name}, your order of {order.product} quantity: {order.quantity} has been submitted successfully Details will be sent to {order.email}"
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
